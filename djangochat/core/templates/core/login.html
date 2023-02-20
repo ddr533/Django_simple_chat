@@ -1,0 +1,29 @@
+{% extends "core/base.html" %}
+{% load user_filter %}
+
+{% block title %}Login | {% endblock %}
+{% block content %}
+<div class="p-10 lg:p-20 text-center">
+  <h1 class="text-3xl lg:text-6xl text-white">Log in</h1>
+</div>
+
+<form method="post" action="." class="lg:w-1/4 px-4 mx-auto">
+  {% for error in form.non_field_errors %}
+  <div class="px-5 py-3 rounded-xl text-white bg-teal-800 hover:bg-teal-700">
+    <p>{{ error|escape }}</p>
+  </div>
+  {% endfor %}
+  {% csrf_token %}
+  {% for field in form %}
+    <div class="mb-5">
+      {{field.errors}}
+      <label for="{{field.id_for_label}}" class="text-white">
+        {{field.label}}
+      </label>
+      {{field|addclass:"w-full mt-2 px-4 -py-2 rounded-xl"}}
+    </div>
+  {% endfor %}
+  <button class="px-5 py-3 rounded-xl text-white bg-teal-800 hover:bg-teal-700">
+    Login</button>
+</form>
+{% endblock %}
