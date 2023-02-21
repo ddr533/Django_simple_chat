@@ -8,12 +8,12 @@
 </div>
 
 <form method="post" action="." class="lg:w-1/4 px-4 mx-auto">
+  {% csrf_token %}
   {% for error in form.non_field_errors %}
   <div class="px-5 py-3 rounded-xl text-white bg-teal-800 hover:bg-teal-700">
     <p>{{ error|escape }}</p>
   </div>
   {% endfor %}
-  {% csrf_token %}
   {% for field in form %}
     <div class="mb-5">
       {{field.errors}}

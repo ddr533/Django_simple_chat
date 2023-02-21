@@ -14,7 +14,3 @@ def signup(request):
         login(request, user)
         return redirect('core:frontpage')
     return render(request, 'core/signup.html', {'form': form})
-
-def room(request):
-    user = request.user.username
-    return HttpResponse(content=f'<h1>Привет {user}</h1>')

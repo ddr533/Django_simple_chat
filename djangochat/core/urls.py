@@ -13,5 +13,4 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(
         template_name='core/login.html'),
         name='login'),
-    path('rooms/', views.room, name='room')
 ]
