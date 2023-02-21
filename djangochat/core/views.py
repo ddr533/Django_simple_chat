@@ -1,11 +1,12 @@
 from django.contrib.auth import login
-from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect, render
+
 from .forms import SignUpForm
 
 
 def frontpage(request):
     return render(request, 'core/frontpage.html')
+
 
 def signup(request):
     form = SignUpForm(request.POST or None)

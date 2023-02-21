@@ -12,7 +12,8 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterModelOptions(
             name='room',
-            options={'ordering': ('-create_date',), 'verbose_name': 'Группа', 'verbose_name_plural': 'Группы'},
+            options={'ordering': ('-create_date',), 'verbose_name': 'Группа',
+                     'verbose_name_plural': 'Группы'},
         ),
         migrations.AddField(
             model_name='room',
@@ -22,6 +23,8 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='room',
             name='name',
-            field=models.CharField(help_text='Поле для имени комнаты', max_length=50, verbose_name='Название комнаты'),
+            field=models.CharField(help_text='Поле для имени комнаты',
+                                   max_length=50,
+                                   verbose_name='Название комнаты'),
         ),
     ]

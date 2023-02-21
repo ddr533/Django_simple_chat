@@ -14,8 +14,12 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Room',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(help_text='Поле для имени комнаты', max_length=30, verbose_name='Название комнаты')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True,
+                                           serialize=False,
+                                           verbose_name='ID')),
+                ('name', models.CharField(help_text='Поле для имени комнаты',
+                                          max_length=30,
+                                          verbose_name='Название комнаты')),
                 ('slug', models.SlugField(unique=True)),
             ],
         ),
